@@ -1,6 +1,6 @@
 ;模式定义
 ;程序的第一部分
-.386
+.386    ;表示使用80386CPU。该语言的CodeBase的所有部分都默认至少80386CPU
 .model flat, stdcall    ;stdcall是winAPI使用的调用规则
 option casemap:none     ;对大小写敏感
 
@@ -30,11 +30,11 @@ include kernel32.inc
     ;type可以为byte word dword fword qword tbyte sbyte sword sdword
     ;s开头表示signed
     num dword 100
-    array dword 1, 2, 3, 4
+    array dword 1, 2, 3, 4  ;这里是个伪数组，实际上array的值为1，要获得首地址需要 offset array
 
 ;未定义初始变量部分，可以合并到data部分
 .data?
-    buffer byte 65536 dup(?)    ;dup括号内表示初始值
+    buffer byte 65536 dup(?)    ;定义数组大小65536初值未定义
     index dword ?   ;定义一个未初始化的类型
 
 ;定义常量数据，可以合并到data部分
