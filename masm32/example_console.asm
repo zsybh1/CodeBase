@@ -13,12 +13,13 @@ scanf proto C :ptr sbyte, :vararg
 	inputstring byte "%d %d", 0
 	outputstring byte "The sum of two numbers is:%d", 0ah, 0
 .code
-start:
+main proc
 	invoke printf, offset msg
 	invoke scanf, offset inputstring, offset tmp, offset tmp+4
 	mov eax, tmp
 	add eax, tmp+4
 	invoke printf, offset outputstring, eax
 	ret
-end start
+main endp
+end main
 

@@ -42,15 +42,3 @@
     and ebx, ecx
     sub eax, ebx
     ;原理max(x, y) = x-(((x-y)>>31)&(x-y))
-
-;联合union
-    unionBuf union
-    fileBuffer byte 4096 dup(?)
-    outputBudder byte 2000 dup(?)
-    unionBuf union
-
-    myBuffer unionBuf <>
-
-    ;.code
-    lea esi, myBuffer.fileBuffer
-    lea esi, myBuffer.outputBudder
