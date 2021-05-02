@@ -47,3 +47,15 @@ next:
 005B1940  jge         main+18Dh (05B1A1Dh)  ;截止这里是结束条件
 ...
 005B1A18  jmp         main+0A3h (05B1933h)  ;循环
+;masm写法
+;for (i = 0; i < NUM; ++i)
+	mov i, 0
+	jmp cond
+step:
+	inc i
+cond:
+	cmp i, NUM
+	jge endfor
+    ...
+	jmp step	;循环
+endfor:

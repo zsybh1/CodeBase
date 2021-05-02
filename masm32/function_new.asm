@@ -6,8 +6,9 @@ subproc proc C/stdcall a:dword, b:ptr dword ;ptr dword即指针
         local temp[3]:dword, temp2, temp3:dword ;定义局部变量伪指令
         ;temp是Ctype数组，使用temp[0],temp[4]等调用
         ...
-        mov eax, addr temp2 ;ebx = &temp2, offset只能用来取全局变量和标号的地址
+        lea eax, temp2 ;ebx = &temp2, offset只能用来取全局变量和标号的地址
         mov ebx, a  ;子程序中可以使用ebx
+        invoke subproc2, addr temp1  ;addr仅能在invoke时取地址
         ...
         ret     ;无需平衡堆栈
 subproc endp

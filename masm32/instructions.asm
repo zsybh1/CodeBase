@@ -87,8 +87,8 @@
     div src
     idiv src
     ;al = ax / src   ah = ax mod src
-    ;ax = dx:ax / src   dx = dx:ax / src
-    ;eax = edx:eax / src   edx = edx:eax / src
+    ;ax = dx:ax / src   dx = dx:ax mod src
+    ;eax = edx:eax / src   edx = edx:eax mod src
 
 ;逻辑运算指令
     not dst         ;dst = ~dst  不影响标志
