@@ -12,6 +12,5 @@ int main () {
 
     // 流迭代器批量输出
     ostream_iterator<int> out(cout, " ");
-    copy(vec.cbegin(), vec.cend(), out);
     cout << endl;   // 刷新输出流
 }
