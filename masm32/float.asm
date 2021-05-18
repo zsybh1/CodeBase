@@ -8,7 +8,6 @@
     real4 / dword   ;32位单精度
     real8 / qword   ;64位双精度
     real10 / tbyte  ;80位扩展精度
-    ;数据定义时可以使用e代表整数
 
 ;数据传送指令
     fld src     ;将src加载到st(0)

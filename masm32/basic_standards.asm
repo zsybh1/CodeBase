@@ -17,7 +17,7 @@ MessageBoxA proto :dword, :dword, :dword, :dword    ;A表示接受ASCII字符串
 MessageBox equ MessageBoxA
 
 ;直接使用预定义的声明
-;实际使用中似乎找不到对应路径？
+;需要使用相对路径，而且不能跨盘符
 include kernel32.inc
 
 ;人工指定堆栈大小，一般可以交给系统自动分配
